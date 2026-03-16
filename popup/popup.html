@@ -8,6 +8,11 @@
     .tab-btn.active { color: #2196F3; border-bottom: 3px solid #2196F3; font-weight: bold; }
     .tab-content { display: none; padding: 20px; text-align: center; }
     .tab-content.active { display: block; }
+    .timer-box { position: relative; max-width: 240px; margin: 20px auto 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; }
+    .add-time-btn { position: absolute; top: 10px; right: 10px; padding: 4px 8px; border: 1px solid #bbb; border-radius: 4px; background: #fff; font-size: 12px; cursor: pointer; }
+    .timer-display { margin: 0 0 16px; font-size: 32px; font-weight: bold; }
+    .timer-controls { display: flex; justify-content: center; gap: 10px; }
+    .timer-controls button { padding: 8px 14px; border: 1px solid #bbb; border-radius: 4px; background: #fff; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -19,7 +24,18 @@
   </nav>
 
   <div id="pomodoro" class="tab-content active"><h1>Pomodoro Time</h1></div>
-  <div id="timer" class="tab-content"><h1>Timer</h1></div>
+  <div id="timer" class="tab-content">
+    <h1>Timer</h1>
+    <div class="timer-box">
+      <button type="button" class="add-time-btn">+30 sec</button>
+      <div class="timer-display">00:00</div>
+      <div class="timer-controls">
+        <button type="button">Start</button>
+        <button type="button">Pause</button>
+        <button type="button">Stop</button>
+      </div>
+    </div>
+  </div>
   <div id="settings" class="tab-content"><h1>Settings</h1></div>
 
   <script src="popup.js"></script>
